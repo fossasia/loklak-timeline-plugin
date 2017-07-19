@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (element){
     let query = element.dataset.query;
     if (element.dataset.height !== undefined) {
-      element.style.height = element.dataset.height;
+      element.style.height = element.dataset.height + 'px';
     }
     if (element.dataset.width !== undefined) {
-      element.style.width = element.dataset.width;
+      element.style.width = element.dataset.width + 'px';
     }
     loklakFetcher.getTweets(query, {
       count: 25
@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let tweets = result.statuses.map((x) => ({text: x.text, user: x.user, others:x}));
       let html = "";
       tweets.forEach(function (tweet) {
-        console.log("sup?");
         html += `<div class="tweet"><a href="https://twitter.com/${tweet.user.screen_name}"><img src=${tweet.user.profile_image_url_https}/><span>${tweet.user.name}</span></a><h4>${tweet.text}</h4><br/>${(tweet.others.images_count>0)?'<img class="tweet-image" src=\"'+tweet.others.images[0]+'\"/>':''}</div>`;
       })
       element.innerHTML = html;

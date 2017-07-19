@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (element){
     let query = element.dataset.query;
     if (element.dataset.height !== undefined) {
-      element.style.height = element.dataset.height;
+      element.style.height = element.dataset.height + 'px';
     }
     if (element.dataset.width !== undefined) {
-      element.style.width = element.dataset.width;
+      element.style.width = element.dataset.width + 'px';
     }
     loklakFetcher.getTweets(query, {
       count: 25

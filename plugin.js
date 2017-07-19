@@ -45,7 +45,7 @@ window.loklakFetcher = (function() {
       }
 
       // Create the URL with all the parameters
-      var url = 'http://loklak.org/api/search.json' +
+      var url = 'http://35.188.41.86/api/search.json' +
         '?callback=loklakFetcher.handleData' +
         '&q=' + query +
         '&count=' + options.count +
@@ -82,18 +82,36 @@ window.loklakFetcher = (function() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
+  function addCss(fileName) {
+
+  var head = document.head
+    , link = document.createElement('link')
+
+  link.type = 'text/css'
+  link.rel = 'stylesheet'
+  link.href = fileName
+
+  head.appendChild(link)
+  }
+  addCss('https://raw.githubusercontent.com/sch00lb0y/loklak-timeline-plugin/master/style.css')
   let elements = document.getElementsByClassName("loklak-timeline")
-  console.log(elements[0].dataset.query)
   for(let i = 0; i < elements.length; i++) {
     (function (element){
     let query = element.dataset.query;
+    if (element.dataset.height !== undefined) {
+      element.style.height = element.dataset.height;
+    }
+    if (element.dataset.width !== undefined) {
+      element.style.width = element.dataset.width;
+    }
     loklakFetcher.getTweets(query, {
       count: 25
     }, function (result) {
-      let tweets = result.statuses.map((x) => ({text: x.text, user: x.user}));
+      let tweets = result.statuses.map((x) => ({text: x.text, user: x.user, others:x}));
       let html = "";
       tweets.forEach(function (tweet) {
-        html += `<div><a href="https://twitter.com/${tweet.user.screen_name}">${tweet.user.name}</a><h4>${tweet.text}</h4></div>`;
+        console.log("sup?");
+        html += `<div class="tweet"><a href="https://twitter.com/${tweet.user.screen_name}"><img src=${tweet.user.profile_image_url_https}/><span>${tweet.user.name}</span></a><h4>${tweet.text}</h4><br/>${(tweet.others.images_count>0)?'<img class="tweet-image" src=\"'+tweet.others.images[0]+'\"/>':''}</div>`;
       })
       element.innerHTML = html;
     })

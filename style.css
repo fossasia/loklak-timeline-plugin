@@ -1,0 +1,59 @@
+.loklak-timeline{
+  width: 500px;
+	height: 300px;
+	overflow: auto;
+  font-family: Helvetica;
+}
+
+.tweet{
+  border-bottom: 0.5px #f1f1f1 solid;
+  padding: 10px;
+}
+
+.tweet a{
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tweet a span{
+  position: relative;
+  top:-15px;
+  left:10px;
+}
+
+.tweet img{
+  width: 40px;
+  border-radius: 100%;
+}
+
+.tweet h4{
+  font-weight: normal;
+}
+
+
+.tweet-image{
+  border-radius: 0px !important;
+  width: 100% !important;
+}
+
+.loklak-timeline::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.loklak-timeline::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+  border-radius: 100px;
+}
+
+.loklak-timeline::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}

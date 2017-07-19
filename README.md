@@ -16,4 +16,4 @@ Add the tag to the html
 |data-width|width of timeline|
 
 # Screenshot
-
+![screenshot](docs/images/loklak.png)

@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   head.appendChild(link)
   }
-  addCss('https://sch00lb0y.github.io/loklak-timeline-plugin/style.css')
+  addCss('https://cdn.rawgit.com/fossasia/loklak-timeline-plugin/master/style.css')
   let elements = document.getElementsByClassName("loklak-timeline")
   for(let i = 0; i < elements.length; i++) {
     (function (element){

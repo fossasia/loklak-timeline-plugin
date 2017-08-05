@@ -3,7 +3,7 @@ JavaScript plugin for embedding loklak timeline to web pages
 # How to
 Reference the javascript manually
 ```html
-<script src="https://sch00lb0y.github.io/loklak-timeline-plugin/plugin.js"></script>
+<script src="https://cdn.rawgit.com/fossasia/loklak-timeline-plugin/master/plugin.js"></script>
 ```
 Add the tag to the html
 ```html

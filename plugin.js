@@ -45,7 +45,7 @@ window.loklakFetcher = (function() {
       }
 
       // Create the URL with all the parameters
-      var url = 'http://35.188.41.86/api/search.json' +
+      var url = 'https://api.loklak.org//api/search.json' +
         '?callback=loklakFetcher.handleData' +
         '&q=' + query +
         '&count=' + options.count +
